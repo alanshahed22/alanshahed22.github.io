@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Alan Shahed</title>
+  <meta name="description" content="Things I've built and am currently building." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .projects-section { padding: 3rem 0 6rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .project-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .project-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,210,170,0.15), rgba(124,58,237,0.15));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tech-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .project-link:hover { color: var(--accent-1); }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
+    }
+    .status-active {
+      background: rgba(0,210,170,0.1);
+      color: var(--accent-1);
+      border: 1px solid rgba(0,210,170,0.25);
+    }
+    .status-planned {
+      background: rgba(124,58,237,0.1);
+      color: #a78bfa;
+      border: 1px solid rgba(124,58,237,0.25);
+    }
+    .status-dot-sm {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>alan.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="https://github.com/alanshahed22" target="_blank" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.82rem;">GitHub ↗</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-banner">
+    <div class="container">
+      <span class="tag">Work</span>
+      <h1>My <span class="gradient-text">Projects</span></h1>
+      <p>Things I've built, am building, or plan to build. All code lives on GitHub.</p>
+    </div>
+  </div>
+
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid">
+
+        <!-- ── Health Monitor ─────────────────────────────── -->
+        <div class="project-card fade-in">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div class="project-icon">❤️</div>
+            <span class="status-badge status-active">
+              <span class="status-dot-sm"></span> Active
+            </span>
+          </div>
+          <h3>Health Monitor Prototype</h3>
+          <p>
+            A real-time health monitoring system that accepts manual or sensor inputs for
+            temperature, blood oxygen (SpO2), and heart rate (BPM) — each displayed on
+            individual live-updating graphs.
+          </p>
+          <div class="project-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Viz</span>
+            <span class="tech-tag">Sensors</span>
+            <span class="tech-tag">Healthcare</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/alanshahed22" target="_blank" class="project-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              GitHub
+            </a>
+            <a href="posts/health-monitor-prototype.html" class="project-link">
+              📝 Blog post
+            </a>
+          </div>
+        </div>
+
+        <!-- ── This Website ───────────────────────────────── -->
+        <div class="project-card fade-in">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div class="project-icon">🌐</div>
+            <span class="status-badge status-active">
+              <span class="status-dot-sm"></span> Active
+            </span>
+          </div>
+          <h3>Personal Website</h3>
+          <p>
+            This site — a hand-coded HTML/CSS personal site hosted for free on GitHub Pages.
+            No frameworks, no CMS, just clean code and a dark theme.
+          </p>
+          <div class="project-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">GitHub Pages</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/alanshahed22/alanshahed22.github.io" target="_blank" class="project-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              Source
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Add your next project here ────────────────── -->
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Built by <a href="https://github.com/alanshahed22">Alan Shahed</a> · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

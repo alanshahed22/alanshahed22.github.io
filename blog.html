@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Alan Shahed</title>
+  <meta name="description" content="Writing about projects, progress, and things I'm figuring out." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-section { padding: 3rem 0 6rem; }
+
+    .posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .post-item {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      transition: all 0.3s;
+    }
+    .post-item:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .post-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .post-item h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    .post-item p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .post-item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .read-more {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-1);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .read-time {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>alan.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="https://github.com/alanshahed22" target="_blank" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.82rem;">GitHub ↗</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-banner">
+    <div class="container">
+      <span class="tag">Writing</span>
+      <h1>The <span class="gradient-text">Blog</span></h1>
+      <p>Progress updates, build logs, and things I'm figuring out along the way.</p>
+    </div>
+  </div>
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="posts-list">
+
+        <!-- ── POST ENTRY ────────────────────────────────────
+             To add a new post:
+             1. Copy one of the <a class="post-item"> blocks below
+             2. Update the href, date, badge, title, and excerpt
+             3. Create the matching file in /posts/
+        ──────────────────────────────────────────────────── -->
+
+        <a href="posts/health-monitor-prototype.html" class="post-item fade-in">
+          <div class="post-item-meta">
+            <span class="badge">Projects</span>
+            <span>July 20, 2026</span>
+          </div>
+          <h2>From Blog to Biometrics: Building a Health Monitor Prototype</h2>
+          <p>
+            How this blog was set up in about 15 minutes, and a look at the software prototype I've been building that tracks temperature, blood oxygen (SpO2), and heart rate — each with their own live graph.
+          </p>
+          <div class="post-item-footer">
+            <span class="read-more">Read post →</span>
+            <span class="read-time">~4 min read</span>
+          </div>
+        </a>
+
+        <!-- ADD NEW POSTS ABOVE THIS LINE -->
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Built by <a href="https://github.com/alanshahed22">Alan Shahed</a> · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

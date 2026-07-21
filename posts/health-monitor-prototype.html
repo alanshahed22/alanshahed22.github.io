@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Blog to Biometrics — Alan Shahed</title>
+  <meta name="description" content="How this blog was set up and how the health monitoring prototype came to be." />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .post-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .post-header { margin-bottom: 3rem; }
+
+    .post-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .post-header h1 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .post-header .excerpt {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      border-left: 3px solid var(--accent-1);
+      padding-left: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* Post body typography */
+    .post-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 2.5rem 0 1rem;
+    }
+    .post-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 2rem 0 0.75rem;
+      color: var(--accent-1);
+    }
+    .post-body p {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .post-body a {
+      color: var(--accent-1);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-body strong { color: var(--text); font-weight: 600; }
+
+    /* Table */
+    .post-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .post-body th {
+      background: var(--bg-card-2);
+      color: var(--text);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-body td {
+      padding: 0.75rem 1rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .post-body tr:last-child td { border-bottom: none; }
+    .post-body tbody tr:hover { background: var(--bg-card); }
+
+    /* Callout box */
+    .callout {
+      background: rgba(0,210,170,0.06);
+      border: 1px solid rgba(0,210,170,0.2);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .callout strong { color: var(--accent-1); }
+
+    /* Numbered list */
+    .post-body ol {
+      padding-left: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .post-body ol li { margin-bottom: 0.4rem; }
+
+    /* Post footer nav */
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .post-nav a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .post-nav a:hover { color: var(--accent-1); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo"><span>alan.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="https://github.com/alanshahed22" target="_blank" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.82rem;">GitHub ↗</a></li>
+    </ul>
+  </nav>
+
+  <article class="post-container">
+
+    <header class="post-header fade-in">
+      <div class="post-header-meta">
+        <span class="badge">Projects</span>
+        <span>July 20, 2026</span>
+        <span>·</span>
+        <span>~4 min read</span>
+      </div>
+      <h1>From Blog to Biometrics: Building a Health Monitor Prototype</h1>
+      <p class="excerpt">
+        This blog itself is brand new — set up today, actually. And the first thing worth writing about is exactly how it got here, and what's been keeping me busy leading up to it.
+      </p>
+    </header>
+
+    <hr class="post-divider" />
+
+    <div class="post-body fade-in">
+
+      <h2>Starting From Scratch</h2>
+      <p>
+        Setting up this site took about fifteen minutes total. The stack is dead simple: hand-coded HTML and CSS hosted on
+        <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. No servers, no databases, no monthly bills.
+        Edit a file, push to GitHub, it's live. That's it.
+      </p>
+      <p>
+        The whole thing lives in a public repo at
+        <a href="https://github.com/alanshahed22/alanshahed22.github.io" target="_blank">github.com/alanshahed22/alanshahed22.github.io</a>.
+        I wanted the lowest-friction publishing setup I could find — something I'd actually stick with.
+      </p>
+      <p>
+        But the real reason I wanted a place to write things down is the project I've been working on.
+      </p>
+
+      <h2>The Project: A Health Monitoring Prototype</h2>
+      <p>
+        I've been building a software prototype for monitoring real-time health data. The core idea: take live inputs
+        and display them cleanly so you can actually make sense of what you're looking at.
+      </p>
+      <p>Right now the prototype tracks three vitals:</p>
+
+      <div class="callout">
+        <strong>🌡️ Temperature</strong> — Body or ambient, depending on sensor placement.<br/><br/>
+        <strong>🩸 SpO2 (Blood Oxygen)</strong> — Peripheral oxygen saturation. The metric that became a household word.<br/><br/>
+        <strong>❤️ BPM (Heart Rate)</strong> — Beats per minute. The classic.
+      </div>
+
+      <p>
+        Each vital has its own dedicated graph that updates as data comes in. No cramming everything onto one
+        cluttered chart — each metric gets its own visual lane so you can read trends at a glance.
+      </p>
+
+      <h2>Input and Display</h2>
+      <p>
+        The UI lets you manually input values for each of the three readings — useful for testing and calibration
+        before full sensor integration. Type in a temperature, an SpO2 percentage, a BPM reading, and the
+        corresponding graph plots it immediately.
+      </p>
+      <p>
+        The three graphs each have their own Y-axis scaled to clinically meaningful ranges:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Normal Range</th>
+            <th>Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🌡️ Temperature</td>
+            <td>97°F – 99°F</td>
+            <td>°F / °C</td>
+          </tr>
+          <tr>
+            <td>🩸 SpO2</td>
+            <td>95% – 100%</td>
+            <td>%</td>
+          </tr>
+          <tr>
+            <td>❤️ BPM</td>
+            <td>60 – 100</td>
+            <td>beats/min</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Readings that fall outside those ranges stand out visually — the goal is to make anomalies obvious
+        without needing to interpret raw numbers.
+      </p>
+
+      <h2>Why This Matters</h2>
+      <p>
+        This prototype is a stepping stone. The end goal is a system that reads directly from hardware sensors,
+        logs data, visualizes it, and eventually alerts based on what it detects. But before any of that, you
+        need a solid foundation: clean data input, reliable rendering, and a UI that doesn't get in the way.
+      </p>
+      <p>
+        Getting the graphing right was the interesting part. Each metric has a different update cadence,
+        different units, and different "normal" ranges. Building them as independent components made the whole
+        thing much easier to reason about.
+      </p>
+
+      <h2>What's Next</h2>
+      <p>A few things on the roadmap:</p>
+      <ol>
+        <li><strong>Live sensor input</strong> — replacing manual entry with real hardware readings</li>
+        <li><strong>Data logging</strong> — saving sessions so you can review trends over time</li>
+        <li><strong>Threshold alerts</strong> — flagging when a value goes outside the normal window</li>
+        <li><strong>Export</strong> — CSV or JSON so the data can be used elsewhere</li>
+      </ol>
+      <p>
+        I'll be posting updates here as things progress. More soon.
+      </p>
+
+    </div>
+
+    <div class="post-nav">
+      <a href="../blog.html">← All posts</a>
+      <a href="../projects.html">See all projects →</a>
+    </div>
+
+  </article>
+
+  <footer>
+    <div class="container">
+      <p>Built by <a href="https://github.com/alanshahed22">Alan Shahed</a> · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

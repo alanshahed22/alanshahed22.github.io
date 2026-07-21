@@ -1,0 +1,38 @@
+title: "Alan's Blog"
+description: "Thoughts, projects, and everything in between."
+url: "https://alanshahed22.github.io"
+baseurl: ""
+
+author:
+  name: "Alan Shahed"
+
+theme: minima
+
+minima:
+  skin: dark
+
+# Social links (optional — delete any you don't want)
+github_username: alanshahed22
+# twitter_username: yourhandle
+
+# Plugins (GitHub Pages supports these natively)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination (optional)
+paginate: 5
+paginate_path: "/page:num/"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+permalink: /:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Blog to Biometrics: Building a Health Monitor Prototype - Alan Shahed</title>
+  <meta name="description" content="How this blog was set up and how the health monitoring prototype came to be.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header>
+    <a href="../index.html">&larr; Back to all posts</a>
+  </header>
+
+  <article>
+    <h1>From Blog to Biometrics: Building a Health Monitor Prototype</h1>
+    <p><time datetime="2026-07-20">July 20, 2026</time></p>
+
+    <blockquote>
+      This blog itself is brand new — set up today, actually. And the first thing worth writing about is exactly how it got here, and what's been keeping me busy leading up to it.
+    </blockquote>
+
+    <h2>Starting From Scratch</h2>
+    <p>
+      Setting up this site took about fifteen minutes total. The stack is dead simple: hand-coded HTML and CSS hosted on
+      <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>. No servers, no databases, no monthly bills.
+      Edit a file, push to GitHub, it's live. That's it.
+    </p>
+    <p>
+      The whole thing lives in a public repo at
+      <a href="https://github.com/alanshahed22/alanshahed22.github.io" target="_blank" rel="noopener">github.com/alanshahed22/alanshahed22.github.io</a>.
+      I wanted the lowest-friction publishing setup I could find — something I'd actually stick with.
+    </p>
+    <p>
+      But the real reason I wanted a place to write things down is the project I've been working on.
+    </p>
+
+    <h2>The Project: A Health Monitoring Prototype</h2>
+    <p>
+      I've been building a software prototype for monitoring real-time health data. The core idea: take live inputs
+      and display them cleanly so you can actually make sense of what you're looking at.
+    </p>
+    <p>Right now the prototype tracks three vitals:</p>
+
+    <div class="callout">
+      <p><strong>🌡️ Temperature</strong> — Body or ambient, depending on sensor placement.</p>
+      <p><strong>🩸 SpO2 (Blood Oxygen)</strong> — Peripheral oxygen saturation. The metric that became a household word.</p>
+      <p><strong>❤️ BPM (Heart Rate)</strong> — Beats per minute. The classic.</p>
+    </div>
+
+    <p>
+      Each vital has its own dedicated graph that updates as data comes in. No cramming everything onto one
+      cluttered chart — each metric gets its own visual lane so you can read trends at a glance.
+    </p>
+
+    <h2>Input and Display</h2>
+    <p>
+      The UI lets you manually input values for each of the three readings — useful for testing and calibration
+      before full sensor integration. Type in a temperature, an SpO2 percentage, a BPM reading, and the
+      corresponding graph plots it immediately.
+    </p>
+    <p>
+      The three graphs each have their own Y-axis scaled to clinically meaningful ranges:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Normal Range</th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🌡️ Temperature</td>
+          <td>97°F – 99°F</td>
+          <td>°F / °C</td>
+        </tr>
+        <tr>
+          <td>🩸 SpO2</td>
+          <td>95% – 100%</td>
+          <td>%</td>
+        </tr>
+        <tr>
+          <td>❤️ BPM</td>
+          <td>60 – 100</td>
+          <td>beats/min</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Readings that fall outside those ranges stand out visually — the goal is to make anomalies obvious
+      without needing to interpret raw numbers.
+    </p>
+
+    <h2>Why This Matters</h2>
+    <p>
+      This prototype is a stepping stone. The end goal is a system that reads directly from hardware sensors,
+      logs data, visualizes it, and eventually alerts based on what it detects. But before any of that, you
+      need a solid foundation: clean data input, reliable rendering, and a UI that doesn't get in the way.
+    </p>
+    <p>
+      Getting the graphing right was the interesting part. Each metric has a different update cadence,
+      different units, and different "normal" ranges. Building them as independent components made the whole
+      thing much easier to reason about.
+    </p>
+
+    <h2>What's Next</h2>
+    <p>A few things on the roadmap:</p>
+    <ol>
+      <li><strong>Live sensor input</strong> — replacing manual entry with real hardware readings</li>
+      <li><strong>Data logging</strong> — saving sessions so you can review trends over time</li>
+      <li><strong>Threshold alerts</strong> — flagging when a value goes outside the normal window</li>
+      <li><strong>Export</strong> — CSV or JSON so the data can be used elsewhere</li>
+    </ol>
+    <p>
+      I'll be posting updates here as things progress. More soon.
+    </p>
+  </article>
+
+  <footer>
+    <p><a href="../index.html">&larr; Back to all posts</a></p>
+  </footer>
+
+</body>
+</html>
